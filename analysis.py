@@ -16,10 +16,10 @@ import matplotlib.pyplot as plt
 
 plt.figure(figsize=(10,6))
 plt.bar(df['primary_type'],df['total'])
-plt.xlabel('crime type')
-plt.ylabel('number of crimes')
+plt.xlabel('Crime Type')
+plt.ylabel('Number of Crimes')
 plt.xticks(rotation=90)
-plt.title('chicago crime counts by type')
+plt.title('Chicago Crime Counts by Type')
 plt.tight_layout()
 plt.savefig('crime_by_type.png')
 plt.show()
@@ -30,9 +30,9 @@ df2 = pd.read_sql(query2, connection)
 
 plt.figure (figsize=(8,5))
 plt.plot(df2['year'], df2 ['total'], marker='o')
-plt.xlabel('year')
-plt.ylabel('number of crimes')
-plt.title('chicago crime trends by year')
+plt.xlabel('Year')
+plt.ylabel('Number of Crimes')
+plt.title('Chicago Crime Trends by Year')
 plt.tight_layout()
 plt.savefig('crime_by_year.png')
 plt.show()
@@ -43,12 +43,40 @@ df3 = pd.read_sql(query3, connection)
 
 plt.figure (figsize=(8,10))
 plt.barh(df3['primary_type'], df3 ['arrest_rate_pct'])
-plt.xlabel('arrest rate(%)')
-plt.ylabel('crime type')
-plt.title('arrest rate by crime type')
+plt.xlabel('Arrest Rate(%)')
+plt.ylabel('Crime Type')
+plt.title('Arrest Rate by Crime Type')
 plt.tight_layout()
 plt.savefig('arrest_rate_by_type.png')
 plt.show()
+
+query4 = "select hour(str_to_date(date_occurred, '%m/%d/%Y %h:%i:%s %p')) as hour_of_day, count(*) as total from crimes group by hour_of_day order by hour_of_day;"
+
+df4 = pd.read_sql(query4, connection)
+
+plt.figure(figsize=(10,5))
+plt.bar(df4['hour_of_day'], df4['total'])
+plt.xticks(range(0, 24))
+plt.xlabel('Hour of Day (0 = midnight)')
+plt.ylabel('Number of Crimes')
+plt.title('Chicago Crimes by Hour of Day')
+plt.tight_layout()
+plt.savefig('crime_by_hour.png')
+plt.show()
+
+query5 = "select district, count(*) as total from crimes where district is not null group by district order by total desc limit 10;"
+
+df5 = pd.read_sql(query5, connection)
+
+plt.figure(figsize=(8,5))
+plt.bar(df5['district'].astype(str), df5['total'])
+plt.xlabel('Police District')
+plt.ylabel('Number of Crimes')
+plt.title('Top 10 Chicago Police Districts by Crime Count')
+plt.tight_layout()
+plt.savefig('crime_by_district.png')
+plt.show()
+
 
 connection.close()
 
