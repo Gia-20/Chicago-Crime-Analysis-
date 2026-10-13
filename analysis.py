@@ -1,10 +1,11 @@
+import getpass
 import mysql.connector
 import pandas as pd 
 
 connection= mysql.connector.connect(
 host='localhost',
 user='root',
-password='Password123',
+password=getpass.getpass('Gia20'),
 database='chicago_crime'
 )
 
