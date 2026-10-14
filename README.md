@@ -38,9 +38,9 @@ One possible explanation is that offenses usually detected through police action
 
 ![Arrest rate by crime type](arrest_rate_by_type.png)
 
-### 4. Crime is lowest in the early morning and highest in the afternoon and evening
+### 4. Crime is lowest around 5 AM and highest at midnight
 
-Reported incidents bottom out at 5 AM (12,016), climb through the morning, and stay high through the afternoon, at roughly 34,000 to 35,000 per hour between 3 PM and 6 PM. Noon is the single highest hour (36,879), but that spike may be partly a recording artifact (see Limitations).
+Reported incidents bottom out at 5 AM (12,016), climb through the morning, and stay high through the afternoon, at roughly 34,000 to 35,000 per hour between 3 PM and 6 PM. The single highest hour is midnight (43,934), followed by noon (36,879) and 3 PM (35,067). The midnight and noon spikes may be partly recording artifacts (see Limitations).
 
 ![Crimes by hour of day](crime_by_hour.png)
 
@@ -57,7 +57,7 @@ District 8 (41,771) and District 12 (41,265) lead, followed by District 6 (36,91
 - **2026 is a partial year.** The 2024 to 2025 comparison is the only like-for-like yearly comparison here, and two full years is a short window for calling anything a trend.
 - **These are reported crimes.** Counts reflect what was reported and recorded, not necessarily everything that happened.
 - **Raw counts, not rates.** District comparisons do not account for population, area, or foot traffic, so a higher count does not mean a higher per-person risk.
-- **The noon spike may be an artifact.** When the exact time of an incident is unknown, records are often logged with a default time, which can inflate certain hours. This should be verified before drawing conclusions about midday crime.
+- **The midnight and noon spikes may be artifacts.** When the exact time of an incident is unknown, records are often logged with a default time such as midnight or noon, which can inflate those hours. Midnight (43,934) is far above the neighboring hours (25,459 at 11 PM), which fits that pattern. This should be verified before drawing conclusions about late-night or midday crime.
 - **Arrest rate is an association.** The explanation offered in Finding 3 is a hypothesis. The `Arrest` field also records whether an arrest was made, not whether it led to a conviction.
 
 ---
