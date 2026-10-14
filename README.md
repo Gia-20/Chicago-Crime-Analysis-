@@ -129,7 +129,7 @@ ORDER BY arrest_rate_pct DESC;
    ```bash
    pip install pandas matplotlib mysql-connector-python
    ```
-5. **Update the connection settings** (`host`, `user`, `password`, `database`) at the top of `analysis.py` to match your MySQL setup.
+5. **Check the connection settings** (`host`, `user`, `database`) at the top of `analysis.py` to match your MySQL setup. The script prompts for your MySQL password when it runs, so no password is stored in the file.
 6. **Run the script.** Each chart window pauses the script until you close it.
    ```bash
    python3 analysis.py
