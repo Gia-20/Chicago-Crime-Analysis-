@@ -5,7 +5,7 @@ import pandas as pd
 connection= mysql.connector.connect(
 host='localhost',
 user='root',
-password=getpass.getpass('Gia20'),
+password=getpass.getpass('MySQL password:Geetanjali2006 '),
 database='chicago_crime'
 )
 
