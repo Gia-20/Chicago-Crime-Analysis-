@@ -54,8 +54,9 @@ group by hour_of_day
 order by hour_of_day;
 
 select district, 
-count(*) as total 
+count(*) as total
 from crimes
+where district is not null
 group by district
 order by total desc
-limit 5;
+limit 10;
