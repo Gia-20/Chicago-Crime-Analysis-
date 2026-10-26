@@ -123,8 +123,8 @@ ORDER BY arrest_rate_pct DESC;
 ## How to Reproduce
 
 1. **Get the data.** On the City of Chicago Data Portal, open "Crimes - 2001 to Present," filter the Date column to 2024 onward, and export as CSV.
-2. **Set up MySQL.** Install MySQL, create a database named `chicago_crime`, and create a `crimes` table whose columns match the CSV headers (spaces replaced with underscores, for example `Case_Number`).
-3. **Import the CSV** into the `crimes` table (MySQL Workbench's Table Data Import Wizard works).
+2. **Set up MySQL.** Install MySQL, then run the `CREATE DATABASE` and `CREATE TABLE` statements at the top of `Chicago-Crime-Analysis-.sql`. The table uses lowercase column names with underscores (for example `primary_type` and `date_occurred`).
+3. **Import the CSV** into the `crimes` table with MySQL Workbench's Table Data Import Wizard. The CSV columns are in the same order as the table, so each one lines up with its matching column (for example, `Date` goes into `date_occurred`).
 4. **Install the Python libraries:**
    ```bash
    pip install pandas matplotlib mysql-connector-python
