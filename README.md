@@ -148,4 +148,4 @@ ORDER BY arrest_rate_pct DESC;
 
 ## Author
 
-Built by Geetanjali Angati
+Geetanjali Angati.
