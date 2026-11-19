@@ -148,4 +148,4 @@ ORDER BY arrest_rate_pct DESC;
 
 ## Author
 
-Built by Geetanjali Angati, a student at the University of Illinois Chicago pursuing a B.S. in Information and Decision Sciences and a B.A. in Economics.
+Built by Geetanjali Angati
